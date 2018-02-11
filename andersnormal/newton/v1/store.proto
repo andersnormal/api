@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package andersnormal.newton;
+
+import "google/firestore/v1beta1/write.proto";
+
+option go_package = "github.com/andersnormal/genproto/apis/newton/v1;newton";
+
+service Store {
+    rpc SaveDialog(DialogRequest) returns (google.firestore.v1beta1.WriteResult) {}
+}
+
+message DialogRequest {
+    int32 customer = 1;
+}
